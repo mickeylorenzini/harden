@@ -37,4 +37,4 @@ Copy `SKILL.md` to your agent's skills directory (e.g., `~/.codex/skills/harden/
 
 ## Author
 
-Built by Michael Lorenzini — Staff scientist, Salk Institute for Biological Studies.
+Built by Mickey Lorenzini — Staff scientist, Salk Institute for Biological Studies.
