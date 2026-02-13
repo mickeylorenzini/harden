@@ -10,7 +10,7 @@ Before you deliver a document, grant section, protocol, strategy, roadmap, or an
 
 ## What makes it different
 
-Existing quality skills are code-focused ([verification-before-completion](https://github.com/obra/superpowers)), single-concern ([clarity-gate](https://github.com/frmoretto/clarity-gate)), or domain-locked ([skill-review](https://github.com/secondsky/skill-review)). harden is the only skill combining web-based research, dual-pass auditing (ideas + structure), severity-classified fix execution, and iterative convergence — and it works on any deliverable type, not just code.
+Existing quality skills are code-focused ([verification-before-completion](https://github.com/obra/superpowers)) or single-concern ([clarity-gate](https://github.com/frmoretto/clarity-gate)). harden is the only skill combining web-based research, dual-pass auditing (ideas + structure), severity-classified fix execution, and iterative convergence — and it works on any deliverable type, not just code.
 
 ## How it works
 
@@ -23,13 +23,15 @@ Existing quality skills are code-focused ([verification-before-completion](https
 ## Install
 
 ### claude.ai
-Download this repo as ZIP → upload via the Skills section in Settings.
+On the repo page, click the green **Code** button → **Download ZIP** → In Claude, go to **Settings → Skills** → upload the ZIP file.
 
 ### Claude Code
 Copy the `harden` folder (containing `SKILL.md`) to `.claude/skills/` in your project, or `~/.claude/skills/` for global access.
 
 ### Codex CLI / Gemini CLI / Others
 Copy `SKILL.md` to your agent's skills directory (e.g., `~/.codex/skills/harden/`).
+
+Once installed, harden activates automatically on substantial deliverables. You can also say "harden" to trigger it manually.
 
 ## License
 
