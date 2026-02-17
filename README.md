@@ -6,7 +6,7 @@ A general-purpose output auditing skill for Claude, Codex, Gemini CLI, and other
 
 ## What it does
 
-Before you deliver an important document, analysis report, grant section, protocol, roadmap, strategy, or any substantial artifact — harden audits it against domain-specific best practices, classifies issues by severity, fixes them, and re-audits until only cosmetic issues remain.
+Before you deliver a complex document, analysis report, grant section, protocol, roadmap, strategy, or any substantial artifact — harden audits it against domain-specific best practices, classifies issues by severity, fixes them, and re-audits until only cosmetic issues remain.
 
 ## What makes it different
 
