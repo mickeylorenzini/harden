@@ -23,7 +23,7 @@ Existing quality skills are code-focused ([verification-before-completion](https
 ## Install
 
 ### claude.ai
-On the repo page, click the green **Code** button → **Download ZIP** → In Claude, go to **Settings → Skills** → upload the ZIP file.
+On the repo page, click the green **Code** button → **Download ZIP** → In Claude, go to **Settings → Capabilities → Add Skills** → upload the ZIP file.
 
 ### Claude Code
 Copy the `harden` folder (containing `SKILL.md`) to `.claude/skills/` in your project, or `~/.claude/skills/` for global access.
