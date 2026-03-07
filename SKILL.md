@@ -179,6 +179,20 @@ expert reviewer check before approving this?"
 - Materials specified with versions, decision points identified
 - Expected results stated for verification
 
+### Implementation Plans / Execution Runbooks
+- Every summary list (e.g., "Bootstrapping Steps") must have 1:1
+  correspondence with its detailed execution section. No step in one
+  without a match in the other.
+- For each step, verify preconditions are satisfied by prior steps.
+  Flag: config created before its target exists, files referenced before
+  creation, tools invoked before dependencies are available.
+- Every CLI command, slash command, skill name, and tool referenced must
+  actually exist. Verify against the known environment — not assumptions
+  or recall. Flag speculative or hallucinated commands.
+- Hook/automation rules must be achievable with their mechanism type
+  (command hooks = grep/regex, prompt hooks = LLM yes/no, agent hooks =
+  multi-turn). Flag rules requiring capabilities beyond their type.
+
 ## Anti-Patterns
 
 **Performative skepticism:** Adding self-critical commentary ("you might want
@@ -207,3 +221,10 @@ the source appearing twice in search results.
 
 **Skipping "what passes":** Only reporting failures without confirming what
 was reviewed and found correct. Hides gaps in audit coverage.
+
+**Static-only plan auditing:** Checking that references resolve and formatting
+is correct while treating a sequential plan as a static document. Plans are
+executable — each step has preconditions. Auditing a plan without simulating
+execution order misses ordering violations, summary↔detail drift, and
+nonexistent tool references. How 7 issues (4 moderate) survived 4 audit passes
+on an implementation plan.
