@@ -108,13 +108,19 @@ Significant (intent exists but executor can't act on it).
 **`run-eval.md`:**
 - Instructions for Claude to follow when invoked with "Read
   tests/run-eval.md and follow the instructions"
-- For each fixture: apply harden's Implementation Plans domain criteria
-  (Step 2, Pass B — structural audit only, no web research)
+- For each fixture: apply the Implementation Plans domain criteria from
+  SKILL.md (no web research, no full harden process — criteria check only)
 - Compare findings against companion `.expected` file
+- **Grading rubric:** A fixture passes if harden flags the same tasks at
+  the same severity as the `.expected` file. Exact wording differences are
+  acceptable — match on task identity and severity, not phrasing.
 - Report per-fixture: name, expected flags, actual flags, match/mismatch
 - Summary line: X/4 passed
+- **On failure:** Investigate SKILL.md criteria first (are they clear enough
+  to produce the expected result?). Update fixture or `.expected` only if
+  the fixture itself is flawed, not to paper over a criteria gap.
 
-**When to run:** After any SKILL.md update, before committing.
+**When to run:** After any SKILL.md update, before pushing.
 
 ## Scope Boundary
 
@@ -133,5 +139,5 @@ or any other skill or repo.
 4. All 4 fixture plans exist and are realistic minimal plans
 5. All 4 .expected files specify which tasks to flag and at what severity
 6. run-eval.md contains complete instructions for running the eval
-7. Running the eval against current fixtures produces results matching
-   .expected files (manual verification)
+7. Running the eval: for each fixture, harden flags the same tasks at
+   the same severity as the .expected file
