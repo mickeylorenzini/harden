@@ -47,9 +47,11 @@ license: MIT
 ---
 ```
 
+**Constraint:** Per the [agentskills.io specification](https://agentskills.io/specification), the `name` field must match the parent directory name. The skill directory must be named `harden/` wherever it is installed (e.g., `~/.claude/skills/harden/SKILL.md`). This is already correct in the current repo structure and README install paths.
+
 ### 2. GitHub Topics
 
-Add 2 tags via GitHub API:
+Add 2 tags via `gh api`. Note: the GitHub topics API requires sending the full topic list (not just additions), so the command must include all existing topics plus the new ones.
 
 | Current | Adding |
 |---------|--------|
@@ -57,35 +59,30 @@ Add 2 tags via GitHub API:
 
 ### 3. README.md Install Section
 
-Replace current install section with:
+Replace current install section with the following structure:
 
-```markdown
-## Install
+**Heading:** `## Install`
 
-### CLI (recommended)
-```
-npx skills add mickeylorenzini/harden
-skillkit install mickeylorenzini/harden
-```
+**Subheading:** `### CLI (recommended)`
+Code block containing:
 
-### Manual — coding agents
-Copy SKILL.md to your agent's skills directory.
-Common paths:
-- Claude Code: ~/.claude/skills/harden/SKILL.md
-- Codex CLI: ~/.codex/skills/harden/SKILL.md
-- Gemini CLI: ~/.gemini/skills/harden/SKILL.md
+    npx skills add mickeylorenzini/harden
+    skillkit install mickeylorenzini/harden
 
-### Manual — chat interfaces
+**Subheading:** `### Manual — coding agents`
+Text: "Copy SKILL.md to your agent's skills directory. Common paths:"
+- Claude Code: `~/.claude/skills/harden/SKILL.md`
+- Codex CLI: `~/.codex/skills/harden/SKILL.md`
+- Gemini CLI: `~/.gemini/skills/harden/SKILL.md`
+
+**Subheading:** `### Manual — chat interfaces`
 - claude.ai / Claude Desktop: Download this repo as ZIP → Settings → Skills → Upload
 - Other chat apps: Upload SKILL.md to your conversation or install via custom instructions in settings
 
-Works with any LLM that can follow structured instructions.
+Text: "Works with any LLM that can follow structured instructions."
 
-### Usage
-Activates automatically on substantial deliverables.
-In CLI tools, trigger manually with `/harden`.
-In chat interfaces, say "harden this" or "audit this before I finalize."
-```
+**Subheading:** `### Usage`
+Text: "Activates automatically on substantial deliverables. In CLI tools, trigger manually with `/harden`. In chat interfaces, say 'harden this' or 'audit this before I finalize.'"
 
 ## Verification Plan
 
@@ -101,8 +98,8 @@ In chat interfaces, say "harden this" or "audit this before I finalize."
 
 | Platform | Verification method | Success criteria |
 |----------|-------------------|------------------|
-| Vercel Skills CLI | `npx skills add mickeylorenzini/harden --list` (or install to temp dir if flag doesn't exist) | Shows "harden" as available skill / file downloaded correctly |
-| SkillKit | `skillkit install mickeylorenzini/harden --dry-run` (or install to temp dir if flag doesn't exist) | Recognizes valid skill / file downloaded correctly |
+| Vercel Skills CLI | `npx skills add mickeylorenzini/harden --list` — confirmed via Vercel docs (fallback: install to temp dir) | Shows "harden" as available skill |
+| SkillKit | `skillkit install mickeylorenzini/harden` — exact flags TBD per pre-implementation research (fallback: install to temp dir) | Skill file downloaded correctly |
 | SkillsMP | Check skillsmp.com for harden listing | Appears in directory (may require scrape cycle) |
 | SkillHub | Check skillhub.club for harden listing | Appears in directory (may require scrape cycle) |
 
