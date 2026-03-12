@@ -15,6 +15,7 @@ description: >
 compatibility: >
   claude.ai, Claude Code, Codex CLI, Gemini CLI (requires web search
   for research step; degrades gracefully without it)
+license: MIT
 ---
 
 # Harden
