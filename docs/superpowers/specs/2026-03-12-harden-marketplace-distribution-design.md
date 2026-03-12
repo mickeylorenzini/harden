@@ -16,7 +16,7 @@ Make harden auto-discoverable on Tier 1 agent skill platforms (those requiring n
 - GitHub topics: add `skill-md`, `skillsmp` to existing tags
 - README.md: rewrite install section with CLI methods, manual paths for coding agents and chat interfaces, usage instructions
 - Post-push verification on 4 Tier 1 platforms
-- Close issues #9 (Phase 1) and #10
+- Update issue #9 (check off Phase 1 items); close #10
 
 ### Out of Scope (Deferred)
 
