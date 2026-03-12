@@ -89,16 +89,20 @@ In chat interfaces, say "harden this" or "audit this before I finalize."
 
 ## Verification Plan
 
-### Pre-implementation: Platform Requirements Research
+### Pre-implementation Research
 
-Web fetch current docs for each platform to confirm requirements haven't changed since handoff doc was written.
+1. **Platform requirements** — Web fetch current docs for Vercel Skills CLI, SkillKit, SkillsMP, and SkillHub to confirm frontmatter requirements haven't changed.
+2. **Install paths** — Verify Codex CLI and Gemini CLI skill directory paths via their docs. If paths cannot be confirmed, qualify README text with "check your agent's docs for the exact path" rather than presenting unverified paths as definitive. Claude Code path (`~/.claude/skills/`) is confirmed.
+3. **CLI verification flags** — Confirm `npx skills add --list` and `skillkit install --dry-run` flags exist. If not, fall back to installing in a temp directory and verifying the skill file is downloaded correctly.
+4. **Claude.ai upload flow** — Verify current skill upload navigation path. If it cannot be confirmed, use generic language ("Upload via your Claude settings").
+5. **License field format** — Confirm platforms expect `MIT` (SPDX identifier) vs other formats.
 
 ### Post-push: Auto-discovery Verification
 
 | Platform | Verification method | Success criteria |
 |----------|-------------------|------------------|
-| Vercel Skills CLI | `npx skills add mickeylorenzini/harden --list` | Shows "harden" as available skill |
-| SkillKit | `skillkit install mickeylorenzini/harden --dry-run` | Recognizes valid skill |
+| Vercel Skills CLI | `npx skills add mickeylorenzini/harden --list` (or install to temp dir if flag doesn't exist) | Shows "harden" as available skill / file downloaded correctly |
+| SkillKit | `skillkit install mickeylorenzini/harden --dry-run` (or install to temp dir if flag doesn't exist) | Recognizes valid skill / file downloaded correctly |
 | SkillsMP | Check skillsmp.com for harden listing | Appears in directory (may require scrape cycle) |
 | SkillHub | Check skillhub.club for harden listing | Appears in directory (may require scrape cycle) |
 
@@ -113,5 +117,5 @@ For scraped platforms (SkillsMP, SkillHub): if not immediately visible, document
 
 ## Issues
 
-- Closes #9 (Phase 1 only — update issue body to note Phase 2 deferred)
+- #9: Do not close — check off Phase 1 items in issue body, leave open for Phase 2
 - Closes #10
