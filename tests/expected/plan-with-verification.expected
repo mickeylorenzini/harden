@@ -1,0 +1,2 @@
+Fixture: plan-with-verification.md
+Expected flags: none (all tasks have concrete, falsifiable verification)

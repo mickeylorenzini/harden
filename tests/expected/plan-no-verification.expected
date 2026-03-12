@@ -1,0 +1,5 @@
+Fixture: plan-no-verification.md
+Expected flags:
+- Task 1 (Create pipeline configuration): 🔴 Critical — no verification method
+- Task 2 (Write CSV parser module): 🔴 Critical — no verification method
+- Task 3 (Set up scheduled ingestion): 🔴 Critical — no verification method

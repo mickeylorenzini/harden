@@ -1,0 +1,3 @@
+Fixture: plan-partial-verification.md
+Expected flags:
+- Task 2 (Write CSV parser module): 🔴 Critical — no verification method

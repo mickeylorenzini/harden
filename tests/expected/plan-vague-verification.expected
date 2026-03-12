@@ -1,0 +1,5 @@
+Fixture: plan-vague-verification.md
+Expected flags:
+- Task 1 (Create pipeline configuration): 🟡 Significant — verification is unfalsifiable ("looks correct" cannot fail)
+- Task 2 (Write CSV parser module): 🟡 Significant — verification is vague ("run tests and verify it works" lacks specifics)
+- Task 3 (Set up scheduled ingestion): 🟡 Significant — verification is unfalsifiable ("runs properly" cannot fail)
