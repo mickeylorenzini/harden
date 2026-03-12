@@ -22,16 +22,33 @@ Existing quality skills are code-focused ([verification-before-completion](https
 
 ## Install
 
-### claude.ai
-On the repo page, click the green **Code** button → **Download ZIP** → In Claude, go to **Settings → Capabilities → Add Skills** → upload the ZIP file.
+### CLI (recommended)
 
-### Claude Code
-Copy the `harden` folder (containing `SKILL.md`) to `.claude/skills/` in your project, or `~/.claude/skills/` for global access.
+```
+npx skills add mickeylorenzini/harden
+skillkit install mickeylorenzini/harden
+```
 
-### Codex CLI / Gemini CLI / Others
-Copy `SKILL.md` to your agent's skills directory (e.g., `~/.codex/skills/harden/`).
+### Manual — coding agents
 
-Once installed, harden activates automatically on substantial deliverables. You can also say "harden" to trigger it manually.
+Copy SKILL.md to your agent's skills directory.
+Common paths:
+- Claude Code: `~/.claude/skills/harden/SKILL.md`
+- Codex CLI: `~/.codex/skills/harden/SKILL.md` or `~/.agents/skills/harden/SKILL.md` (check [Codex docs](https://developers.openai.com/codex/skills/) for your version)
+- Gemini CLI: `~/.gemini/skills/harden/SKILL.md`
+
+### Manual — chat interfaces
+
+- claude.ai / Claude Desktop: Download this repo as ZIP → Settings → Capabilities → Skills → Upload
+- Other chat apps: Upload SKILL.md to your conversation or install via custom instructions in settings
+
+Works with any LLM that can follow structured instructions.
+
+### Usage
+
+Activates automatically on substantial deliverables.
+In CLI tools, trigger manually with `/harden`.
+In chat interfaces, say "harden this" or "audit this before I finalize."
 
 ## License
 
