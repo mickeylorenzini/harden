@@ -192,6 +192,12 @@ expert reviewer check before approving this?"
 - Hook/automation rules must be achievable with their mechanism type
   (command hooks = grep/regex, prompt hooks = LLM yes/no, agent hooks =
   multi-turn). Flag rules requiring capabilities beyond their type.
+- Every task must include a concrete verification method: a command with
+  expected output, a file/state existence check, or an observable result.
+  "Verify it works" and "run tests" without specifics are insufficient —
+  a literal executor must be able to confirm success without follow-up.
+- Verification methods must be falsifiable — they must be able to fail.
+  "Check that the file exists" is falsifiable. "Review the output" is not.
 
 ## Anti-Patterns
 
@@ -228,3 +234,8 @@ executable — each step has preconditions. Auditing a plan without simulating
 execution order misses ordering violations, summary↔detail drift, and
 nonexistent tool references. How 7 issues (4 moderate) survived 4 audit passes
 on an implementation plan.
+
+**Verification-free planning:** Approving an implementation plan where tasks
+lack concrete verification methods. Every task produces a result; every result
+can be checked. Plans without per-task verification shift the burden to the
+executor to invent checks — which means they often don't.
